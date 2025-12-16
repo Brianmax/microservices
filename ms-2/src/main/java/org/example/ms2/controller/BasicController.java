@@ -2,6 +2,7 @@ package org.example.ms2.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BasicController {
 
     @GetMapping("/aprobado")
-    public String isAprobado(float nota) {
+    public String isAprobado(@RequestParam float nota) {
         if (nota >= 13) {
             return "YES";
         }
